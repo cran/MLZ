@@ -1,6 +1,6 @@
 Package: MLZ
 Title: Mean Length-Based Estimators of Mortality using TMB
-Version: 0.1.0
+Version: 0.1.1
 Authors@R: c(person("Quang", "Huynh", email = "q.huynh@oceans.ubc.ca", role = c("aut", "cre")),
   person("Todd", "Gedamke", rol = "ctb"), person("Amy", "Then", rol = "ctb"))
 Maintainer: Quang Huynh <q.huynh@oceans.ubc.ca>
@@ -16,9 +16,9 @@ Suggests: knitr, rmarkdown
 VignetteBuilder: knitr
 LinkingTo: TMB, RcppEigen
 NeedsCompilation: yes
-Packaged: 2018-05-25 17:21:55 UTC; Quang Huynh
+Packaged: 2018-06-11 20:13:46 UTC; qhuynh
 Author: Quang Huynh [aut, cre],
   Todd Gedamke [ctb],
   Amy Then [ctb]
 Repository: CRAN
-Date/Publication: 2018-05-27 16:34:47 UTC
+Date/Publication: 2018-06-12 11:29:34 UTC
