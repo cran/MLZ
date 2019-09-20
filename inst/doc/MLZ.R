@@ -15,7 +15,7 @@ new.dataset <- new("MLZ_data", Year = 1983:2013, Len_df = SilkSnapper, length.un
 #  bin_length(SilkSnapper)
 
 ## ---- fig.height = 5, fig.width = 6, message = FALSE---------------------
-plot(new.dataset)
+plot(new.dataset, type = "comp")
 
 ## ---- message = FALSE, echo = FALSE--------------------------------------
 new.dataset@Lc <- 310
@@ -58,11 +58,11 @@ model2 <- ML(Goosefish, ncp = 1, figure = FALSE)
 model3 <- ML(Goosefish, ncp = 2, figure = FALSE)
 
 ## ---- eval = FALSE-------------------------------------------------------
-#  compare_models(list(model1, model2, model3))
+#  compare_models(model1, model2, model3)
 
 ## ---- fig.width = 5, echo = FALSE----------------------------------------
 par(mar = c(2,4,1,1))
-compare_models(list(model1, model2, model3))
+compare_models(model1, model2, model3)
 
 ## ---- eval = FALSE-------------------------------------------------------
 #  modal_length(new.dataset, breaks = seq(80, 830, 10))

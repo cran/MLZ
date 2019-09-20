@@ -5,8 +5,8 @@
 \title{Grid search for the multispecies mean length estimator}
 \usage{
 profile_MLmulti(MLZ.list, ncp, model = c("SSM", "MSM1", "MSM2", "MSM3"),
-  startZ1 = rep(0.5, length(MLZ.list)), parallel = ifelse(ncp > 2, TRUE,
-  FALSE), min.time = 3, figure = TRUE, color = TRUE)
+  startZ1 = rep(0.5, length(MLZ.list)), parallel = ifelse(ncp > 2,
+  TRUE, FALSE), min.time = 3, figure = TRUE, color = TRUE)
 }
 \arguments{
 \item{MLZ.list}{A list containing an object of class \code{MLZ_data} for each species or stock.}
@@ -25,7 +25,7 @@ profile_MLmulti(MLZ.list, ncp, model = c("SSM", "MSM1", "MSM2", "MSM3"),
 if \code{ncp = 1} or \code{2}.}
 
 \item{color}{If \code{TRUE}, creates a color plot for the likelihood surface. Only used if
-\code{ncp = 2}.#'}
+\code{ncp = 2}.}
 }
 \value{
 A matrix of change points with the total negative log-likelihood values and values 

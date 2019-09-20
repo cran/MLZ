@@ -2,7 +2,7 @@
 #'
 #' Produces a matrix of AIC for model selection.
 #'
-#' @param MLZ_model.list A list containing objects of class \code{MLZ_model}, all from the same mortality
+#' @param ... Multiple objects of class \code{MLZ_model}, all from the same mortality
 #' estimator and same data set.
 #' @param figure If \code{TRUE}, produces a figure of model fits to the observed data.
 #' @param color Optional vector of colors for the figure each representing a separate model
@@ -16,7 +16,7 @@
 #' goose1 <- ML(Goosefish, ncp = 1)
 #' goose2 <- ML(Goosefish, ncp = 2, grid.search = TRUE, figure = FALSE)
 #'
-#' compare_models(list(goose, goose1, goose2))
+#' compare_models(goose, goose1, goose2)
 #'
 #' data(PRSnapper)
 #' ssm <- MLmulti(PRSnapper, ncp = 1, model = "SSM")
@@ -24,13 +24,13 @@
 #' msm2 <- MLmulti(PRSnapper, ncp = 1, model = "MSM2")
 #' msm3 <- MLmulti(PRSnapper, ncp = 1, model = "MSM3")
 #'
-#' compare_models(list(ssm, msm1, msm2, msm3))
+#' compare_models(ssm, msm1, msm2, msm3)
 #' }
 #' @export
-compare_models <- function(MLZ_model.list, figure = TRUE, color = NULL) {
-  old_par <- par(no.readonly = TRUE)
-  on.exit(par(list = old_par), add = TRUE)
-
+compare_models <- function(..., figure = TRUE, color = NULL) {
+  MLZ_model.list <- list(...)
+  if(length(MLZ_model.list) == 1 && is.list(MLZ_model.list[[1]])) MLZ_model.list <- MLZ_model.list[[1]] # For backwards compatibility
+     
   model.names <- vapply(MLZ_model.list, getElement, c("x"), "Model")
   model <- unique(model.names)
   if(length(model) > 1) stop("More than one model identified in MLZ_model.list")
@@ -52,6 +52,9 @@ compare_models <- function(MLZ_model.list, figure = TRUE, color = NULL) {
     output <- matrix(c(negLL, npar, AIC, delta.AIC), nrow = length(MLZ_model.list))
     dimnames(output) <- list(ncp.text, c("negLL", "npar", "AIC", "delta.AIC"))
     if(figure) {
+      old_par <- par(no.readonly = TRUE)
+      on.exit(par(list = old_par))
+      
       par(las = 1)
       if(is.null(color)) color <- rich.colors(length(MLZ_model.list))
       plot(MeanLength ~ Year, MLZ_model.list[[1]]@time.series, ylab = paste("Mean Length (> Lc)", length.units), 
@@ -69,8 +72,11 @@ compare_models <- function(MLZ_model.list, figure = TRUE, color = NULL) {
     output <- matrix(c(negLL, npar, AIC, delta.AIC), nrow = length(MLZ_model.list))
     dimnames(output) <- list(ncp.text, c("negLL", "npar", "AIC", "delta.AIC"))
     if(figure) {
-      if(is.null(color)) color <- rich.colors(length(MLZ_model.list))
+      old_par <- par(no.readonly = TRUE)
+      on.exit(par(list = old_par))
       par(mfrow = c(1,2), mar = c(5,4,1,1), las = 1)
+      
+      if(is.null(color)) color <- rich.colors(length(MLZ_model.list))
       plot(MeanLength ~ Year, MLZ_model.list[[1]]@time.series, ylab = paste("Mean Length (> Lc)", length.units),
            typ = "o", pch = 16)
       for(i in 1:length(MLZ_model.list)) {
@@ -113,7 +119,10 @@ compare_models <- function(MLZ_model.list, figure = TRUE, color = NULL) {
     colnames(output) <- c("n.changepoint", "negLL", "npar", "AIC", "delta.AIC")
 
     if(figure) {
+      old_par <- par(no.readonly = TRUE)
+      on.exit(par(list = old_par))
       par(mfrow = c(2,2), las = 1)
+      
       if(is.null(color)) color <- rich.colors(length(MLZ_model.list))
       nyrs <- nrow(MLZ_model.list[[1]]@time.series)/nspec
 

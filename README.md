@@ -1,6 +1,7 @@
 # MLZ: Mean Length-based Z Estimators
 
 [![Build Status](https://travis-ci.org/quang-huynh/MLZ.svg?branch=master)](https://travis-ci.org/quang-huynh/MLZ)
+[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/MLZ)](https://CRAN.R-project.org/package=MLZ)
 
 ## Introduction
 MLZ is a R package that facilitates data preparation and estimation of mortality with statistical diagnostics using the mean length-based mortality estimator and several extensions.
@@ -12,16 +13,19 @@ vignette("MLZ")
 ```
 
 ## Version
-Currently, the package is in active development, version 0.1.0. Testing, reporting issues, and pull requests are welcome.
+Currently, the package is in active development, version 0.1.1. Testing, reporting issues, and pull requests are welcome.
 
 ## Installation
-The estimation models are written in TMB. As a result, Rtools is required if running the package on a Windows machine. Rtools can be downloaded here: https://cran.r-project.org/bin/windows/Rtools/index.html
+The package is available on CRAN:
+```r
+install.packages("MLZ")
+```
 
-The MLZ package can then be installed using the `devtools` package:
-
+The development source code can also be downloaded and installed with the `devtools` package:
 ```r
 devtools::install_github("quang-huynh/MLZ")
 ```
+Since the estimation models are written in TMB, Rtools is required on a Windows machine for installation from the source package. Rtools can be downloaded here: https://cran.r-project.org/bin/windows/Rtools/index.html.
 
 ## Citations
 Gedamke, T. and Hoenig, J.M. 2006. Estimating mortality from mean length data in nonequilibrium situations, with application to the assessment of goosefish. Transactions of the American Fisheries Society 135:476-487.
