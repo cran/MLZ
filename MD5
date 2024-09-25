@@ -1,6 +1,6 @@
-8f2b421c3a3ae7c9d50c6480dba3678e *DESCRIPTION
+12fc6a65a6965ba67588615d219dc31c *DESCRIPTION
 bd7b960b2ee2342aaec4f321f6552744 *NAMESPACE
-f469c588c2b6b4387b7ca2789c7d84e8 *NEWS.md
+e42de54a27ac20401dab3c76e4068190 *NEWS.md
 dd180e74109813f60b56d1681361c801 *R/compare_models.R
 4a8acb0898d0ecbb620ffd2e6ce1455b *R/data_document.R
 b956432b23ec81da3e35d9651c06715d *R/data_process.R
@@ -11,16 +11,16 @@ a6f6e8c020190450a9f0c48c14423152 *R/methods.R
 2596de3d22300c77e6a4251625ba8f6a *R/profile.R
 912b8c7dccaabefcbb13bc7ec27d4e2c *R/sensitivity.R
 d7be088085e0617914f4dd15294e03a7 *R/zzz.R
-6a285b50aee34f9575b4c562c6c00d1f *README.md
-1b9d9da55fbfc49396009168b0c6a3cc *build/vignette.rds
+5d8b477cf975dc89b57c5cb2c208b878 *README.md
+3e6f0521b0211c0f763cbc4bc36cc9e3 *build/vignette.rds
 6fc1d38997fe7471562ff5c5b6529afa *data/Goosefish.rda
 2fd28dd4ef8a1e14b2c9bbbc75410513 *data/MuttonSnapper.rda
 cb610d16ca95eb32fef07da1ed4c1869 *data/Nephrops.rda
 ff78466305ab224f8c7d3ffcc4f085ff *data/PRSnapper.rda
 6abfb3231efbf25358a69911af96b3d0 *data/SilkSnapper.rda
-417103b4edd6877620527e95429a6df6 *inst/doc/MLZ.R
+f587f3fd927259c195f201321beefcbe *inst/doc/MLZ.R
 5507557412c662df59e2ecdf87475df6 *inst/doc/MLZ.Rmd
-65c7b8436b417eff29147e93cec580e7 *inst/doc/MLZ.html
+793aa187febca897eca3060a24e2d482 *inst/doc/MLZ.html
 83a87f6ba32c56811ae90b97d0afd948 *inst/include/ML.hpp
 fdb653e73546a0333c73f506f228a127 *inst/include/MLCR.hpp
 f4b03ab6058c9972662232e8087f8ba7 *inst/include/MLeffort.hpp
@@ -50,5 +50,5 @@ bf809ab9b704ffc7db04bc11da4745ca *man/profile_MLmulti.Rd
 088af9a14c4535b8ec24ab67875a85e1 *man/sensitivity_Lc.Rd
 5633222b73797e32834522c5b935a430 *man/summary-MLZ_data-method.Rd
 ca835f2d5e1e8ff904a81d5c7b3d89e6 *man/summary-MLZ_model-method.Rd
-27ac9bd2e26273c3c381ed26c68472d0 *src/MLZ.cpp
+033dd6bfa57177006559129b7fe65a36 *src/MLZ.cpp
 5507557412c662df59e2ecdf87475df6 *vignettes/MLZ.Rmd
